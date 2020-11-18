@@ -1,13 +1,29 @@
 import React from "react";
 
-const BeyCard = ({bey}) => {
-  
-  return (
-    <div className="card">
-    <h1>{bey.name}</h1>
-    <img src={bey.img} alt="beyonce"/>
-    </div>
-    ); 
-};
+
+class BeyCard extends React.Component{
+
+  beyClickHandler = () => {  
+    this.props.appClickHandler(this.props.bey)
+  }
+    render(){
+      return (
+        
+        <div className="card">
+          <h1 >{this.props.bey.name}</h1>
+        <img src={this.props.bey.img} alt="beyonce" onClick={this.beyClickHandler} />
+        </div>
+      ); 
+    }
+
+
+}
+
+
+
+
+
+
+
 
 export default BeyCard;
